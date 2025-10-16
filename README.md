@@ -1,32 +1,45 @@
-  <p align="center">
+<p align="center">
   <a href="https://github.com/SpotX-Official/SpotX/releases"><img src="https://spotx-official.github.io/images/logos/logo.png" /></a>
 </p>
 
-<p align="center">        
-      <a href="https://t.me/spotify_windows_mod"><img src="https://spotx-official.github.io/images/shields/SpotX_Channel.svg"></a>
-      <a href="https://t.me/SpotxCommunity"><img src="https://spotx-official.github.io/images/shields/SpotX_Community.svg"></a>
-      <a href="https://github.com/SpotX-Official/SpotX-Bash"><img src="https://spotx-official.github.io/images/shields/SpotX_for_Mac&Linux.svg"></a>
-      <a href="https://telegra.ph/SpotX-FAQ-09-19"><img src="https://spotx-official.github.io/images/shields/faq.svg"></a>
-      </p>
+<p align="center">
+  <a href="https://t.me/spotify_windows_mod"><img src="https://spotx-official.github.io/images/shields/SpotX_Channel.svg"></a>
+  <a href="https://t.me/SpotxCommunity"><img src="https://spotx-official.github.io/images/shields/SpotX_Community.svg"></a>
+  <a href="https://github.com/SpotX-Official/SpotX-Bash"><img src="https://spotx-official.github.io/images/shields/SpotX_for_Mac&Linux.svg"></a>
+  <a href="https://telegra.ph/SpotX-FAQ-09-19"><img src="https://spotx-official.github.io/images/shields/faq.svg"></a>
+</p>
 
-   <h2> <div align="center"><b> Modified Spotify Client for Windows </b></div> </h2>
+<h2> 
+  <div align="center">
+    <b>Patcher for Spotify Desktop Client on Windows </b>
+  </div> 
+</h2>
 
-<h1>System requirements</h1>
+<p align="center"> •
+  <a href="#requirements">Requirements</a> •
+  <a href="#features">Features</a> •
+  <a href="#installation--update">Installation</a> •
+  <a href="#uninstall">Uninstall</a> •
+  <a href="#faq">FAQ</a> •
+  <a href="#disclaimer">Disclaimer</a>
+</p>
 
-- <strong>OS: Windows 7-11</strong>
-- <strong>Spotify: latest official [versions](https://cutt.ly/8EH6NuH)</strong>
-- <strong>For Windows Desktop only (Microsoft store version is not suitable).</strong>
-- <strong>PowerShell: version 5 and above recommended</strong>
+<h1 id="requirements">Requirements</h1>
 
-<h1>Features</h1>
+- **OS:** Windows 7-11
+- **Spotify:** [Official desktop version](https://loadspot.pages.dev) (Microsoft Store version is not suitable)
+- **PowerShell:** 5.1 and above
 
-- <strong>Blocks all banner, video and audio ads in the client</strong>
-- <strong>Hiding podcasts, episodes and audiobooks from the homepage (optional)</strong>
-- <strong>Block Spotify automatic updates (optional)</strong>
-- <strong>More experimental features have been activated ([see the full list](https://github.com/SpotX-Official/SpotX/discussions/50))</strong>
-- <strong>Disabled sentry's console log/error/warning messages to Spotify developers, halted user interaction logging, eliminated right-to-left CSS rules for simplification, and performed code minification</strong> 
+<h1 id="features">Features</h1>
 
-<h1>Fast installation / Update</h1>
+- **Blocks all banner, video, and audio ads** in the client
+- **Hiding podcasts, episodes, and audiobooks** from the homepage (optional)
+- **Block Spotify automatic updates** (optional)
+- **Some native experimental features have been changed**
+- **Analytics sending has been disabled** 
+- **Advanced installation [parameters](https://github.com/SpotX-Official/SpotX/discussions/60)**
+
+<h1 id="installation--update">Installation / Update</h1>
 <h3>Choose installation type:</h3>
 <details>
 <summary><small>Usual installation (New theme)</small></summary><p>
@@ -38,20 +51,20 @@
 
   <h4> </h4>
   
-#### Just download and run [Install.bat](https://raw.githack.com/amd64fox/SpotX/main/Install_New_theme.bat)
+#### Just download and run [Install_New_theme.bat](https://raw.githack.com/amd64fox/SpotX/main/Install_New_theme.bat)
 
 or
 
 #### Run The following command in PowerShell:
 
 ```ps1
-iex "& { $(iwr -useb 'https://raw.githubusercontent.com/SpotX-Official/spotx-official.github.io/main/run.ps1') } -new_theme"
+iex "& { $(iwr -useb 'https://raw.githubusercontent.com/SpotX-Official/SpotX/refs/heads/main/run.ps1') } -new_theme"
 ```
 
 #### mirror
 
 ```ps1
-iex "& { $(iwr -useb 'https://spotx-official.github.io/run.ps1') } -m -new_theme"
+iex "& { $(iwr -useb 'https://spotx-official.github.io/SpotX/run.ps1') } -m -new_theme"
 ```
 
 </details>
@@ -68,20 +81,20 @@ iex "& { $(iwr -useb 'https://spotx-official.github.io/run.ps1') } -m -new_theme
 
   <h4> </h4>
   
-#### Just download and run [Install.bat](https://raw.githack.com/amd64fox/SpotX/main/Install_Old_theme.bat)
+#### Just download and run [Install_Old_theme.bat](https://raw.githack.com/amd64fox/SpotX/main/Install_Old_theme.bat)
 
 or
 
 #### Run The following command in PowerShell:
 
 ```ps1
-iex "& { $(iwr -useb 'https://raw.githubusercontent.com/SpotX-Official/spotx-official.github.io/main/run.ps1') } -v 1.2.13.661.ga588f749-4064 -confirm_spoti_recomended_over -block_update_on"
+iex "& { $(iwr -useb 'https://raw.githubusercontent.com/SpotX-Official/SpotX/refs/heads/main/run.ps1') } -v 1.2.13.661.ga588f749-4064 -confirm_spoti_recomended_over -block_update_on"
 ```
 
 #### mirror
 
 ```ps1
-iex "& { $(iwr -useb 'https://spotx-official.github.io/run.ps1') } -m -v 1.2.13.661.ga588f749-4064 -confirm_spoti_recomended_over -block_update_on"
+iex "& { $(iwr -useb 'https://spotx-official.github.io/SpotX/run.ps1') } -m -v 1.2.13.661.ga588f749-4064 -confirm_spoti_recomended_over -block_update_on"
 ```
 
 </details>
@@ -110,13 +123,13 @@ or
 #### Run The following command in PowerShell:
 
 ```ps1
-iex "& { $(iwr -useb 'https://raw.githubusercontent.com/SpotX-Official/spotx-official.github.io/main/run.ps1') } -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -block_update_on -start_spoti -new_theme -adsections_off -lyrics_stat spotify"
+iex "& { $(iwr -useb 'https://raw.githubusercontent.com/SpotX-Official/SpotX/refs/heads/main/run.ps1') } -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -block_update_on -start_spoti -new_theme -adsections_off -lyrics_stat spotify"
 ```
 
 #### mirror
 
 ```ps1
-iex "& { $(iwr -useb 'https://spotx-official.github.io/run.ps1') } -m -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -block_update_on -start_spoti -new_theme -adsections_off -lyrics_stat spotify"
+iex "& { $(iwr -useb 'https://spotx-official.github.io/SpotX/run.ps1') } -m -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -block_update_on -start_spoti -new_theme -adsections_off -lyrics_stat spotify"
 ```
 
 </details>
@@ -142,13 +155,13 @@ or
 #### Run The following command in PowerShell:
 
 ```ps1
-iex "& { $(iwr -useb 'https://raw.githubusercontent.com/SpotX-Official/spotx-official.github.io/main/run.ps1') } -premium -new_theme"
+iex "& { $(iwr -useb 'https://raw.githubusercontent.com/SpotX-Official/SpotX/refs/heads/main/run.ps1') } -premium -new_theme"
 ```
 
 #### mirror
 
 ```ps1
-iex "& { $(iwr -useb 'https://spotx-official.github.io/run.ps1') } -m -premium -new_theme"
+iex "& { $(iwr -useb 'https://spotx-official.github.io/SpotX/run.ps1') } -m -premium -new_theme"
 ```
 
 </details>
@@ -162,7 +175,7 @@ You can specify various parameters for a more flexible installation, more [detai
 
 </details>
 
-<h1>Uninstall</h1>
+<h1 id="uninstall">Uninstall</h1>
 
 - Just run [Uninstall.bat](https://raw.githack.com/amd64fox/SpotX/main/Uninstall.bat)
 
@@ -170,14 +183,10 @@ or
 
 - Reinstall Spotify ([Full uninstall Spotify](https://github.com/amd64fox/Uninstall-Spotify) recommended)
 
-<h1>FAQ</h1>
+<h1 id="faq">FAQ</h1>
 
  Read [FAQ](https://telegra.ph/SpotX-FAQ-09-19)
 
-<h1>Credits</h1>
+<h1 id="disclaimer">Disclaimer</h1>
 
- Some tricks were taken from <a href="https://github.com/khanhas/spicetify-cli">spicetify-cli</a>, many thanks to the contributors.
-
-<h1>Disclaimer</h1>
-
- SpotX is a modified version of the official Spotify client, provided as an evaluation version, you use it at your own risk.
+SpotX is a tool that modifies the official Spotify client, provided as an evaluation version — use it at your own risk.
