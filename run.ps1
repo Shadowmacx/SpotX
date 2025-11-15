@@ -382,7 +382,7 @@ if (!($version -and $version -match $match_v)) {
     }
     else {  
         # latest tested version for Win 10-12 
-        $onlineFull = "1.2.74.477.g3be53afe-1297"
+        $onlineFull = "1.2.76.298.g2316a870-2"
     }
 }
 else {
@@ -1147,9 +1147,6 @@ function Helper($paramname) {
 
             # temporarily disable collapsing right sidebar
             Move-Json -n 'PeekNpv' -t $Enable -f $Disable
-
-            # notifications are temporarily disabled
-            Move-Json -n 'NotificationCenter' -t $Enable -f $Disable
  
             if ($podcast_off) { Move-Json -n 'HomePin' -t $Enable -f $Disable }
 
@@ -2128,19 +2125,20 @@ if ($test_spa) {
         if ($section -ne $null) {
 
             $calltype = switch ($true) {
-                ($podcast_off -and $adsections_off -and $canvashome_off) { 'all'; break }
-                ($podcast_off -and $adsections_off) { 'podcast, section'; break }
-                ($podcast_off -and $canvashome_off) { 'podcast, canvas'; break }
-                ($adsections_off -and $canvashome_off) { 'section, canvas'; break }
-                $podcast_off { 'podcast'; break }
-                $adsections_off { 'section'; break }
-                $canvashome_off { 'canvas'; break }
+                ($podcast_off -and $adsections_off -and $canvashome_off) { "'all'"; break }
+                ($podcast_off -and $adsections_off) { "['podcast', 'section']"; break }
+                ($podcast_off -and $canvashome_off) { "['podcast', 'canvas']"; break }
+                ($adsections_off -and $canvashome_off) { "['section', 'canvas']"; break }
+                $podcast_off { "'podcast'"; break }
+                $adsections_off { "'section'"; break }
+                $canvashome_off { "'canvas'"; break }
                 default { $null } 
             }
 
-            $section = $section -replace "sectionBlock\(data, ''\)", "sectionBlock(data, '$calltype')"
-
-            injection -p $xpui_spa_patch -f "spotx-helper" -n "sectionBlock.js" -c $section
+            if (!($calltype -eq "'canvas'" -and [version]$offline -le [version]"1.2.44.405")) {
+                $section = $section -replace "sectionBlock\(data, ''\)", "sectionBlock(data, $calltype)"
+                injection -p $xpui_spa_patch -f "spotx-helper" -n "sectionBlock.js" -c $section
+            }
         }
 
     }
@@ -2296,7 +2294,10 @@ $regex1 = $old -notmatch $webjson.others.binary.block_update.add
 $regex2 = $old -notmatch $webjson.others.binary.block_slots.add
 $regex3 = $old -notmatch $webjson.others.binary.block_slots_2.add
 $regex4 = $old -notmatch $webjson.others.binary.block_slots_3.add
-$regex5 = $old -notmatch $webjson.others.binary.block_gabo.add
+$regex5 = $old -notmatch $(
+    if ([version]$offline -gt [version]'1.2.73.474') { $webjson.others.binary.block_gabo2.add }
+    else { $webjson.others.binary.block_gabo.add }
+)
 
 if ($regex1 -and $regex2 -and $regex3 -and $regex4 -and $regex5) {
 
